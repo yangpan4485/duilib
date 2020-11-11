@@ -3,7 +3,7 @@
 #Created: 2012/9/17
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} SRC)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})                           
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
@@ -13,5 +13,5 @@ target_link_libraries(MenuDemo duilib)
 
 
 add_custom_command(TARGET MenuDemo POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different
-  ${PROJECT_BINARY_DIR}/bin/MenuDemo.exe ${PROJECT_SOURCE_DIR}/bin/MenuDemo.exe)
+	COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    ${CMAKE_SOURCE_DIR}/output/bin/Debug/MenuDemo.exe ${PROJECT_SOURCE_DIR}/bin/MenuDemo.exe)

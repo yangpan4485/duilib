@@ -21,5 +21,5 @@ add_definitions(-DUILIB_EXPORTS)
 target_link_libraries(duilib comctl32)
 set_target_properties(duilib PROPERTIES OUTPUT_NAME "duilib")
 add_custom_command(TARGET duilib POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different
-  ${PROJECT_BINARY_DIR}/lib/duilib.dll ${PROJECT_SOURCE_DIR}/bin/duilib.dll)
+     COMMAND ${CMAKE_COMMAND} -E copy_if_different
+     ${CMAKE_SOURCE_DIR}/output/bin/Debug/duilib.dll ${PROJECT_SOURCE_DIR}/bin/duilib.dll)

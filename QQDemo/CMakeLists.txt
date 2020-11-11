@@ -3,15 +3,16 @@
 #Created: 2012/9/17
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} SRC)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})                           
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-add_executable(QQDemo ${SRC} QQDemo.rc)
+# add_executable(QQDemo ${SRC} QQDemo.rc)
+add_executable(QQDemo ${SRC})
 set_target_properties(QQDemo PROPERTIES LINK_FLAGS "/SUBSYSTEM:WINDOWS")
 target_link_libraries(QQDemo duilib)
 
 
 add_custom_command(TARGET QQDemo POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different
-  ${PROJECT_BINARY_DIR}/bin/QQDemo.exe ${PROJECT_SOURCE_DIR}/bin/QQDemo.exe)
+	COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    ${CMAKE_SOURCE_DIR}/output/bin/Debug/QQDemo.exe ${CMAKE_SOURCE_DIR}/bin/QQDemo.exe)
