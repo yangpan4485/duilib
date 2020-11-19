@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="960,540" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id="0" name="宋体" size="18" bold="false" underline="false" italic="false" />
+  <Default name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.bmp&apos;&quot; hotimage=&quot;file=&apos;common/button_over.bmp&apos;&quot; pushedimage=&quot;file=&apos;common/button_down.bmp&apos;&quot; font=&quot;0&quot;" />
+
+  <VerticalLayout bkcolor="#FFDFFDF0" width="300" height="318">  <!-- 整个窗口使用 HorizontalLayout 布局 -->
+  	<VerticalLayout>
+        <Label name= "userIdLabel" text="用户名：" float="true" pos="300,80,370,120" normaltextcolor="white" font="0"/>
+        <Label name= "passwordLabel" text="密  码：" float="true" pos="300,140,370,180" normaltextcolor="white" font="0"/>
+
+        <Edit name="userIdEdit" text="" float="true" pos="370,85,0,0" width="250" height="30" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="0"/>
+        <Edit name="passwordEdit" password="true" text="" float="true" pos="370,146,0,0" width="250" height="30" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="0"/>
+
+        <Button name="btnLogin" text="登录" float="true" pos="300,220,400,250"/>
+        <Button name="btnQuit" text="退出" float="true" pos="500,220,600,250"/>
+  	</VerticalLayout>
+  </VerticalLayout>
+</Window>

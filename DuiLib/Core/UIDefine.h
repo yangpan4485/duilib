@@ -289,6 +289,7 @@ protected:                                                                \
 #define  DUI_CTR_LISTLABELELEMENT                (_T("ListLabelElement"))
 
 #define  DUI_CTR_LISTCONTAINERELEMENT            (_T("ListContainerElement"))
+#define  DUI_CTR_ANIMATIONTABLAYOUT				 (_T("AnimationTabLayout"))
 
 
 ///

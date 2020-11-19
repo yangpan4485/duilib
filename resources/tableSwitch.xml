@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="1280,720" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4"> <!-- 窗口的初始尺寸(宽800，高600)、窗口的最小尺寸(宽600，高400)、标题栏拖拽区域(高32)、可拖拽边框大小(这里添加sizebox后就可以拖拽边框调整大小了) -->
+  <Font id="0" name="宋体" size="20" bold="false" underline="false" italic="false" shared="true"/>
+  <Font id="1" name="宋体" size="17" bold="false" underline="false" italic="false" shared="true"/>
+  <Font id="2" name="黑体" size="24" bold="true" underline="false" italic="false" shared="true"/>
+  <Font id="3" name="宋体" size="17" bold="false" underline="false" italic="false" shared="true"/>
+    <HorizontalLayout bkcolor="#FFFFFFFF"> <!-- 整个窗口的背景色 -->
+        <!-- 客户区 -->
+        <VerticalLayout name="tabHeader" width="150" bkcolor="#FFFFFAFA">
+            <Control />
+            <Option pos="0,0,150,70" float="true" height="60" text="常规设置" name="basicTab" textcolor="#FFAFADAD" hottextcolor="#FFFFFFFF" selectedtextcolor="#FFFFFFFF" textpadding="6,0,6,0" bkcolor="#FFFFFAFA" hotbkcolor="#FF4b4b4b" pushedbkcolor="#FF424242" selectedbkcolor="#FF424242" group="tabHeader" selected="true" font="0" />
+            <Option pos="0,70,150,140" float="true" height="60" text="视频设置" name="videoTab" textcolor="#FFAFADAD" hottextcolor="#FFFFFFFF" selectedtextcolor="#FFFFFFFF" textpadding="6,0,6,0" bkcolor="#FFFFFAFA" hotbkcolor="#FF4b4b4b" pushedbkcolor="#FF424242" selectedbkcolor="#FF424242" group="tabHeader" font="0" />
+            <Option pos="0,140,150,210" float="true" height="60" text="音频设置" name="audioTab" textcolor="#FFAFADAD" hottextcolor="#FFFFFFFF" selectedtextcolor="#FFFFFFFF" textpadding="6,0,6,0" bkcolor="#FFFFFAFA" hotbkcolor="#FF4b4b4b" pushedbkcolor="#FF424242" selectedbkcolor="#FF424242" group="tabHeader" font="0" />
+            <Option pos="0,210,150,280" float="true" height="60" text="屏幕设置" name="screenTab" textcolor="#FFAFADAD" hottextcolor="#FFFFFFFF" selectedtextcolor="#FFFFFFFF" textpadding="6,0,6,0" bkcolor="#FFFFFAFA" hotbkcolor="#FF4b4b4b" pushedbkcolor="#FF424242" selectedbkcolor="#FF424242" group="tabHeader" font="0" />
+            <Option pos="0,280,150,350" float="true" height="60" text="账户设置" name="accountTab" textcolor="#FFAFADAD" hottextcolor="#FFFFFFFF" selectedtextcolor="#FFFFFFFF" textpadding="6,0,6,0" bkcolor="#FFFFFAFA" hotbkcolor="#FF4b4b4b" pushedbkcolor="#FF424242" selectedbkcolor="#FF424242" group="tabHeader" font="0" />
+            <Control />
+        </VerticalLayout>
+
+        <VerticalLayout bkcolor="#FFF5F5F5">
+            <AnimationTabLayout bkcolor="#FFF5F5F5" name="tabSwitch">
+                <VerticalLayout name="basicTabPanel" inset="2,2,2,2" vscrollbar="true">
+                    <Label text="Label标签控件自动换行测试0" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试1" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试2" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试3" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                </VerticalLayout>
+
+                <VerticalLayout name="videoTabPanel" inset="2,2,2,2" vscrollbar="true">
+                    <Label text="Label标签控件自动换行测试10" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试11" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试12" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试13" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                </VerticalLayout>
+
+                <VerticalLayout name="audioTabPanel" inset="2,2,2,2" vscrollbar="true">
+                    <Label text="Label标签控件自动换行测试20" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试21" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试22" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试23" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                </VerticalLayout>
+                <VerticalLayout name="screenTabPanel" inset="2,2,2,2" vscrollbar="true">
+                    <Label text="Label标签控件自动换行测试30" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试31" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试32" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试33" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                </VerticalLayout>
+
+                <VerticalLayout name="accountTabPanel" inset="2,2,2,2" vscrollbar="true">
+                    <Label text="Label标签控件自动换行测试40" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试41" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试42" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                    <Label text="Label标签控件自动换行测试43" width="260" align="left" wordbreak="true" textcolor="#FFFF0000" font="1"/>
+                </VerticalLayout>
+            </AnimationTabLayout>
+        </VerticalLayout>
+    </HorizontalLayout>
+</Window>
