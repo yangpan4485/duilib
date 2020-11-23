@@ -59,10 +59,42 @@ void Login::OnClick(DuiLib::TNotifyUI& msg)
         std::string password = editPassword->GetText();
         std::cout << "userId:" << userId << std::endl;
         std::cout << "password:" << password << std::endl;
+
+        auto option = dynamic_cast<DuiLib::COptionUI*>(_paintManager.FindControl(_T("radioTeacher")));
+        std::cout << "radioTeacher:" << option->IsSelected() << std::endl;
+        option = dynamic_cast<DuiLib::COptionUI*>(_paintManager.FindControl(_T("radioStudent")));
+        std::cout << "radioStudent:" << option->IsSelected() << std::endl;
+
+        auto checkBox = dynamic_cast<DuiLib::CCheckBoxUI*>(_paintManager.FindControl(_T("CheckBox1")));
+        std::cout << "CheckBox1:" << checkBox->GetCheck() << std::endl;
+        checkBox = dynamic_cast<DuiLib::CCheckBoxUI*>(_paintManager.FindControl(_T("CheckBox2")));
+        std::cout << "CheckBox2:" << checkBox->GetCheck() << std::endl;
+
+        auto combo = dynamic_cast<DuiLib::CComboUI*>(_paintManager.FindControl(_T("env_type")));
+        std::cout << "env_type:" << combo->GetText() << std::endl;
+        std::cout << "env_type:" << combo->GetCurSel() << std::endl;  // 第一个输出0
+        
     }
     else if (msg.pSender->GetName() == _T("btnQuit"))
     {
         Close();
+    }
+    else if (msg.pSender->GetName() == _T("radioTeacher"))
+    {
+        std::cout << "radioTeacher selected" << std::endl;
+    }
+    else if (msg.pSender->GetName() == _T("radioStudent"))
+    {
+        std::cout << "radioStudent selected" << std::endl;
+    }
+    else if (msg.pSender->GetName() == _T("CheckBox1"))
+    {
+        std::cout << "CheckBox2 click" << std::endl;
+        
+    }
+    else if (msg.pSender->GetName() == _T("CheckBox2"))
+    {
+        std::cout << "CheckBox2 click" << std::endl;
     }
 }
 void Login::OnEditTextChange(DuiLib::TNotifyUI& msg)

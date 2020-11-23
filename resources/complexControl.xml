@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="960,540" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id="0" shared="true" name="宋体" size="18" bold="false" underline="false" italic="false" />
+  <Font id="1" shared="true" name="宋体" size="20" bold="false" underline="false" italic="false" />
+  <Font id="2" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
+
+  <VerticalLayout bkcolor="#FFDFFDF0" width="300" height="318">  <!-- 整个窗口使用 VerticalLayout 布局 -->
+  	<ActiveX name="ActiveXDemo1" float="true" pos="60,40,0,0" width="800" height="400" />
+  </VerticalLayout>
+</Window>
