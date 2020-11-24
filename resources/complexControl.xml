@@ -4,7 +4,17 @@
   <Font id="1" shared="true" name="宋体" size="20" bold="false" underline="false" italic="false" />
   <Font id="2" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
 
-  <VerticalLayout bkcolor="#FFDFFDF0" width="300" height="318">  <!-- 整个窗口使用 VerticalLayout 布局 -->
-  	<ActiveX name="ActiveXDemo1" float="true" pos="60,40,0,0" width="800" height="400" />
+  <Default shared="true" name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.bmp&apos;&quot; hotimage=&quot;file=&apos;common/button_over.bmp&apos;&quot; pushedimage=&quot;file=&apos;common/button_down.bmp&apos;&quot; font=&quot;0&quot;" />
+
+  <VerticalLayout bkcolor="#FFDFFDF0">  <!-- 整个窗口使用 VerticalLayout 布局 -->
+  	<Progress name="progressControl" text="0" textpadding="0,6,0,0" float="true" pos="30,28,0,0" width="139" height="30" bkimage="file='common/progress_back.png' corner='5,4,4,5'" foreimage="common/progress_fore.png" min="0" max="100" value="0" hor="true" align="center" font="2" />
+  	<Button name="startBtn" text="开始" pos="28,90,100,120" float="true" />
+
+  	<Slider name="sliderControl" float="true" pos="28,150,0,0" width="139" height="18" thumbsize="12,20" bkimage="file='common/SliderBar_BK.bmp' mask='0xffff00ff'" thumbimage="file='common/SliderBar_Thumb.png' mask='0xffffffff'"/>
+
+  	<List name="ListDemo1" float="true" pos="28,200,0,0" width="139" height="200" header="hidden" bkcolor="#FFFFFFFF" itemtextcolor="#FF000000" itembkcolor="#FFE2DDDF" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" itemfont="2" >
+  		<ListLabelElement text="张三" selected="true" />
+        <ListLabelElement text="李四" />
+    </List>
   </VerticalLayout>
 </Window>

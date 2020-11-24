@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <string>
+#include <thread>
+#include <chrono>
 
 ComplexControl::ComplexControl()
 {
@@ -86,11 +88,24 @@ LRESULT ComplexControl::OnClose(UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 void ComplexControl::OnClick(DuiLib::TNotifyUI& msg)
 {
-
+    if (msg.pSender->GetName() == _T("startBtn"))
+    {
+        DuiLib::CProgressUI* pProgress = static_cast<DuiLib::CProgressUI*>(_paintManager.FindControl(_T("progressControl")));
+        std::thread work = std::thread([pProgress, this]() {
+            for (int i = 1; i <= 100; ++i) {
+                pProgress->SetValue(i);
+                std::string text = std::to_string(i) + "%";
+                pProgress->SetText(text.c_str());
+                Sleep(50);
+            }
+        });
+        work.detach();
+    }
 }
 
 void ComplexControl::InitWindow()
 {
+#if 0
     DuiLib::CActiveXUI* pActiveXUI = static_cast<DuiLib::CActiveXUI*>(_paintManager.FindControl(_T("ActiveXDemo1")));
     if (pActiveXUI)
     {
@@ -106,4 +121,5 @@ void ComplexControl::InitWindow()
             pWebBrowser->Release();
         }
     }
+#endif
 }
