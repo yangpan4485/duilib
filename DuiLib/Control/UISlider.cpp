@@ -120,7 +120,7 @@ namespace DuiLib
 			return;
 		}
 
-		if( event.Type == UIEVENT_BUTTONDOWN || event.Type == UIEVENT_DBLCLICK )
+		if( event.Type == UIEVENT_BUTTONDOWN || event.Type == UIEVENT_DBLCLICK)
 		{
 			if( IsEnabled() ) {
 				/*RECT rcThumb = GetThumbRect();

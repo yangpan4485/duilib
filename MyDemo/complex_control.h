@@ -21,6 +21,8 @@ public:
     LRESULT OnClose(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
     void OnClick(DuiLib::TNotifyUI& msg);
+    void OnValueChange(DuiLib::TNotifyUI& msg);
+	void OnItemClick(DuiLib::TNotifyUI& msg);
 
 private:
     void InitWindow();

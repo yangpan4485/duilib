@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Window size="960,540" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4">
+<Window size="1200,600" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4">
   <Font id="0" shared="true" name="宋体" size="18" bold="false" underline="false" italic="false" />
   <Font id="1" shared="true" name="宋体" size="20" bold="false" underline="false" italic="false" />
   <Font id="2" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
+  <Font id="3" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
+  <Font id="4" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
 
   <Default shared="true" name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.bmp&apos;&quot; hotimage=&quot;file=&apos;common/button_over.bmp&apos;&quot; pushedimage=&quot;file=&apos;common/button_down.bmp&apos;&quot; font=&quot;0&quot;" />
+  <Default shared="true" name="List" value="headerbkimage=&quot;res='common/list_header_bg.png'&quot; itemalign=&quot;center&quot; itemlinecolor=&quot;#FF888888&quot; itemshowrowline=&quot;true&quot; itemshowcolumnline=&quot;true&quot;" />
+  <Default name="VScrollBar" shared="true" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common/vscrollbar.png' source='0,60,8,100' corner='0,4,0,4'&quot; thumbhotimage=&quot;file='common/vscrollbar.png' source='8,60,16,100' corner='0,4,0,4'&quot; thumbpushedimage=&quot;file='common/vscrollbar.png' source='16,60,24,100' corner='0,4,0,4'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='common/vscrollbar.png' source='0,0,8,60' corner='0,4,0,4'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+  <Default name="HScrollBar" shared="true" value="height=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; thumbhotimage=&quot;file='common/hscrollbar.png' source='0,8,32,16' corner='4,0,4,0'&quot; thumbpushedimage=&quot;file='common/hscrollbar.png' source='0,16,32,24' corner='4,0,4,0'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='common/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
 
   <VerticalLayout bkcolor="#FFDFFDF0">  <!-- 整个窗口使用 VerticalLayout 布局 -->
   	<Progress name="progressControl" text="0" textpadding="0,6,0,0" float="true" pos="30,28,0,0" width="139" height="30" bkimage="file='common/progress_back.png' corner='5,4,4,5'" foreimage="common/progress_fore.png" min="0" max="100" value="0" hor="true" align="center" font="2" />
   	<Button name="startBtn" text="开始" pos="28,90,100,120" float="true" />
 
-  	<Slider name="sliderControl" float="true" pos="28,150,0,0" width="139" height="18" thumbsize="12,20" bkimage="file='common/SliderBar_BK.bmp' mask='0xffff00ff'" thumbimage="file='common/SliderBar_Thumb.png' mask='0xffffffff'"/>
+  	<Slider name="sliderControl" float="true" pos="28,150,0,0" width="139" height="18" thumbsize="12,20" value="0" bkimage="file='common/SliderBar_BK.bmp' mask='0xffff00ff'" thumbimage="file='common/SliderBar_Thumb.png' mask='0xffffffff'"/>
 
-  	<List name="ListDemo1" float="true" pos="28,200,0,0" width="139" height="200" header="hidden" bkcolor="#FFFFFFFF" itemtextcolor="#FF000000" itembkcolor="#FFE2DDDF" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" itemfont="2" >
-  		<ListLabelElement text="张三" selected="true" />
-        <ListLabelElement text="李四" />
+    <List name="listControl" float="true" pos="30,200,0,0" width="400" height="218" vscrollbar="true" hscrollbar="true" bkcolor="#FFFFFFFF" itemtextcolor="#FF000000" itembkcolor="#FFE2AADF" itemselectedtextcolor="#FF000000" itemselectedbkcolor="#FFC1E3FF" itemhottextcolor="#FF000000" itemhotbkcolor="#FFE9F5FF" itemdisabledtextcolor="#FFCCCCCC" itemdisabledbkcolor="#FFFFFFFF" >
+      <ListHeader name="domain" bkimage="common/list_header_bg.png">
+        <ListHeaderItem text="姓名" width="80" height="30" minwidth="25"  sepwidth="1" align="center" hotimage="common/list_header_hot.png" pushedimage="common/list_header_pushed.png" sepimage="common/list_header_sep.png" bkcolor="0xffaa00ff"/>
+        <ListHeaderItem text="学号" width="160" height="30" minwidth="25"  sepwidth="1" align="center" hotimage="common/list_header_hot.png" pushedimage="common/list_header_pushed.png" sepimage="common/list_header_sep.png" bkcolor="0xffaa00ff"/>
+        <ListHeaderItem text="成绩" width="160" height="30" minwidth="25"  sepwidth="1" align="center" hotimage="common/list_header_hot.png" pushedimage="common/list_header_pushed.png" sepimage="common/list_header_sep.png" bkcolor="0xffaa00ff"/>
+      </ListHeader>
     </List>
+
+    <RichEdit name="wordedit" pos="450,200,0,0" float="true" width="350" height="178" bkcolor="#FFFFFFFF" textcolor="#FFAAA001" font="0" password="false" tipvalue="请输入文字" mutiline="true" autovscroll="true" rich="false" vscrollbar="true" hscrollbar="false" autohscroll="false"/>
+    <Button name="okBtn" text="确定" pos="450,388,522,418" float="true" />
+
+    <DateTime name="dataTime" pos="450,30,650,70" float="true" bordersize="1" bordercolor="#FF888888" textpadding="3" bkcolor="#FFE2E5EA" font="2"/>
+    <Control pos="450,80,650,85" float="true" bkcolor="#FF000000"/>
+    <Control pos="250,20,255,160" float="true" bkcolor="#FF000000"/>
+
+    <Container pos="450,90,550,200" float="true" bkimage="file='common/test.jpg' dest='0,5,98,105'" />
+    <Container pos="550,90,650,200" float="true" bkimage="file='common/test.jpg' dest='2,5,100,105'" />
+
+    <TreeView pos="850,20,1115,418" float="true" bkcolor="#FF111111" name="treePlaylist" childpadding="4" multipleitem="true" inset="4,0,3,0" bordersize="1" bordercolor="#FF2B2B2B" itemtextcolor="#FFC8C6CB" itemhottextcolor="#FFC8C6CB" selitemtextcolor="#FFC8C6CB" itemhotbkcolor="#FF1B1B1B" itemselectedbkcolor="#FF151C2C" vscrollbar="true" hscrollbar="true" >
+      <TreeNode name="nodePlaylist" text="播放列表" height="33" bkimage="common/treeview_header.png" itemattr="valign=&quot;vcenter&quot; font=&quot;1&quot; textpadding=&quot;12,0,0,0&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;">
+          <TreeNode text="迅雷下载" inset="-8,0,0,0" height="22" itemattr="valign=&quot;vcenter&quot; font=&quot;0&quot; textpadding=&quot;4,0,0,0&quot;" folderattr="padding=&quot;0,5,0,0&quot; width=&quot;12&quot; height=&quot;12&quot; selectedimage=&quot;file='common/treeview_expand.png' source='0,0,12,12' &quot; normalimage=&quot;file='common/treeview_expand.png' source='13,0,25,12' &quot;">
+            <TreeNode text="下载1" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+            <TreeNode text="下载2" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+        </TreeNode>
+      </TreeNode>
+      <TreeNode name="onlineMedialist" text="在线媒体" height="33" bkimage="common/treeview_header.png" itemattr="valign=&quot;vcenter&quot; font=&quot;1&quot; textpadding=&quot;12,0,0,0&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;">
+          <TreeNode text="今日热播" inset="-8,0,0,0" height="22" itemattr="valign=&quot;vcenter&quot; font=&quot;0&quot; textpadding=&quot;4,0,0,0&quot;" folderattr="padding=&quot;0,5,0,0&quot; width=&quot;12&quot; height=&quot;12&quot; selectedimage=&quot;file='common/treeview_expand.png' source='0,0,12,12' &quot; normalimage=&quot;file='common/treeview_expand.png' source='13,0,25,12' &quot;">
+            <TreeNode text="八公" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+            <TreeNode text="HACHI" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+        </TreeNode>
+          <TreeNode text="热点新闻" inset="-8,0,0,0" height="22" itemattr="valign=&quot;vcenter&quot; font=&quot;0&quot; textpadding=&quot;4,0,0,0&quot;" folderattr="padding=&quot;0,5,0,0&quot; width=&quot;12&quot; height=&quot;12&quot; selectedimage=&quot;file='common/treeview_expand.png' source='0,0,12,12' &quot; normalimage=&quot;file='common/treeview_expand.png' source='13,0,25,12' &quot;">
+            <TreeNode text="八公" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+            <TreeNode text="HACHI" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+        </TreeNode>
+      </TreeNode>
+      <TreeNode name="gameCenterlist" text="娱乐中心" height="33" bkimage="common/treeview_header.png" itemattr="valign=&quot;vcenter&quot; font=&quot;1&quot; textpadding=&quot;12,0,0,0&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;">
+          <TreeNode text="短视频广场" inset="-8,0,0,0" height="22" itemattr="valign=&quot;vcenter&quot; font=&quot;0&quot; textpadding=&quot;4,0,0,0&quot;" folderattr="padding=&quot;0,5,0,0&quot; width=&quot;12&quot; height=&quot;12&quot; selectedimage=&quot;file='common/treeview_expand.png' source='0,0,12,12' &quot; normalimage=&quot;file='common/treeview_expand.png' source='13,0,25,12' &quot;">
+            <TreeNode text="热门视频" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+            <TreeNode text="美女视频" height="22" inset="7,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;4&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+        </TreeNode>
+            <TreeNode text="直播频道" height="22" inset="8,0,0,0" itemattr="valign=&quot;vcenter&quot; font=&quot;0&quot;" folderattr="width=&quot;0&quot; float=&quot;true&quot;"/>
+      </TreeNode>
+    </TreeView>
   </VerticalLayout>
 </Window>

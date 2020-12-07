@@ -5,6 +5,8 @@
 #include <thread>
 #include <chrono>
 
+using namespace DuiLib;
+
 ComplexControl::ComplexControl()
 {
 
@@ -47,6 +49,14 @@ void ComplexControl::Notify(DuiLib::TNotifyUI& msg)
     {
         OnClick(msg);
     }
+    else if (msg.sType == _T("valuechanged"))
+    {
+        OnValueChange(msg);
+    }
+	else if (msg.sType == _T("itemclick"))
+	{
+		OnItemClick(msg);
+	}
 }
 LRESULT ComplexControl::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -101,10 +111,74 @@ void ComplexControl::OnClick(DuiLib::TNotifyUI& msg)
         });
         work.detach();
     }
+    if (msg.pSender->GetName() == _T("okBtn"))
+    {
+        // 如果有手动输入的换行，字符会被覆盖掉
+        DuiLib::CRichEditUI* pRichEdit = static_cast<DuiLib::CRichEditUI*>(_paintManager.FindControl(_T("wordedit")));
+        std::cout << pRichEdit->GetText() << std::endl;
+    }
+}
+
+void ComplexControl::OnValueChange(DuiLib::TNotifyUI& msg)
+{
+    if (msg.pSender->GetName() == _T("sliderControl"))
+    {
+        DuiLib::CSliderUI* slider = static_cast<DuiLib::CSliderUI*>(_paintManager.FindControl(_T("sliderControl")));
+        // 获取 slider 的进度
+        std::cout << "slider:" << slider->GetValue() << std::endl;
+    }
+}
+
+void ComplexControl::OnItemClick(DuiLib::TNotifyUI& msg)
+{
+	auto name = msg.pSender->GetName();
+	DuiLib::CTreeNodeUI* treeNode = nullptr;
+	if (name == "nodePlaylist")
+	{
+		treeNode = static_cast<DuiLib::CTreeNodeUI*>(_paintManager.FindControl(_T("nodePlaylist")));
+	}
+	else if (name == "onlineMedialist")
+	{
+		treeNode = static_cast<DuiLib::CTreeNodeUI*>(_paintManager.FindControl(_T("onlineMedialist")));
+	}
+	else if (name == "gameCenterlist")
+	{
+		treeNode = static_cast<DuiLib::CTreeNodeUI*>(_paintManager.FindControl(_T("gameCenterlist")));
+	}
+
+	if (treeNode && treeNode->IsHasChild()) {
+		CTreeViewUI	* pTreeView = treeNode->GetTreeView();
+		if (NULL != pTreeView) {
+			CCheckBoxUI* pFolder = treeNode->GetFolderButton();
+			pFolder->Selected(!pFolder->IsSelected());
+			treeNode->SetVisibleTag(!pFolder->GetCheck());
+			pTreeView->SetItemExpand(!pFolder->GetCheck(), treeNode);
+		}
+	}
 }
 
 void ComplexControl::InitWindow()
 {
+    CListUI* pList = static_cast<CListUI*>(_paintManager.FindControl(_T("listControl")));
+    for (int i = 0; i < 20; i++)
+    {
+        CListTextElementUI* pItem = new CListTextElementUI();
+        pItem->SetTag(i);
+        pItem->SetFixedHeight(30);
+        pList->Add(pItem);
+        std::string number;
+        if (i < 10)
+        {
+            number = "100" + std::to_string(i);
+        }
+        else {
+            number = "10" + std::to_string(i);
+        }
+        std::string score = std::to_string(i + 60);
+        pItem->SetText(0, _T("张三"));
+        pItem->SetText(1, _T(number.c_str()));
+        pItem->SetText(2, _T(score.c_str()));
+    }
 #if 0
     DuiLib::CActiveXUI* pActiveXUI = static_cast<DuiLib::CActiveXUI*>(_paintManager.FindControl(_T("ActiveXDemo1")));
     if (pActiveXUI)
