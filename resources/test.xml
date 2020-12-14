@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="800,600" caption="0,0,300,20">
+  <Default name="VScrollBar" shared="true" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common/vscrollbar.png' source='0,60,8,100' corner='0,4,0,4'&quot; thumbhotimage=&quot;file='common/vscrollbar.png' source='8,60,16,100' corner='0,4,0,4'&quot; thumbpushedimage=&quot;file='common/vscrollbar.png' source='16,60,24,100' corner='0,4,0,4'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='common/vscrollbar.png' source='0,0,8,60' corner='0,4,0,4'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+  <Default name="HScrollBar" shared="true" value="height=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; thumbhotimage=&quot;file='common/hscrollbar.png' source='0,8,32,16' corner='4,0,4,0'&quot; thumbpushedimage=&quot;file='common/hscrollbar.png' source='0,16,32,24' corner='4,0,4,0'&quot; railnormalimage=&quot;&quot; railhotimage=&quot;&quot; railpushedimage=&quot;&quot; raildisabledimage=&quot;&quot; bknormalimage=&quot;file='common/hscrollbar.png' source='0,0,32,8' corner='4,0,4,0'&quot; bkhotimage=&quot;&quot; bkpushedimage=&quot;&quot; bkdisabledimage=&quot;&quot; "/>
+  <Default shared="true" name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.bmp&apos;&quot; hotimage=&quot;file=&apos;common/button_over.bmp&apos;&quot; pushedimage=&quot;file=&apos;common/button_down.bmp&apos;&quot; font=&quot;0&quot;" />
+	<VerticalLayout name="aaaa" bkcolor="#FFFFFFFF" >
+		<VerticalLayout name="scrollbar" float="true" pos="50,20,200,200" hscrollbar="true" vscrollbar="true" sepheight="4" childpadding="10" bkcolor="#FFFFAADD">
+			<Button name="child1" text="text1" float="false" pos="10,10,100,40" height="30" />
+			<Button name="child2" text="text2" float="false" pos="10,60,100,90" height="30" />
+			<Button name="child3" text="text3" float="false" pos="10,110,100,140" height="30" />
+			<Button name="child4" text="text4" float="false" pos="10,160,100,190" height="30" />
+			<Button name="child5" text="text5" float="false" pos="10,210,100,240" height="30" />
+			<Button name="child6" text="text6" float="false" pos="10,260,100,290" height="30" />
+		</VerticalLayout>
+		<VerticalLayout name="timer" float="true" pos="50,220,200,400" hscrollbar="true" vscrollbar="true" sepheight="4" childpadding="10" bkcolor="#FFFFDD11">
+			<Button name="timerBtn" text="定时器" float="false" pos="10,260,100,290" height="30" />
+			<Edit name="userIdEdit" text="0" float="false" pos="370,85,0,0" width="80" height="30" bkcolor="#FFFFFFFF" textpadding="4,3,4,3" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="0"/>
+
+		</VerticalLayout>
+	</VerticalLayout>
+</Window>

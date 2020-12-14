@@ -6,7 +6,6 @@ class ComplexControl : public DuiLib::CWindowWnd, public DuiLib::INotifyUI
 {
 public:
     ComplexControl();
-
     ~ComplexControl();
 
     void Init();
