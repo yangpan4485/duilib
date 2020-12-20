@@ -4,12 +4,27 @@
 #include "tab_switch.h"
 #include "complex_control.h"
 #include "timer.h"
+#include "dynamic.h"
+#include "main_wnd.h"
 
 int main(void) {
+    MainWnd* mainWindow = new MainWnd;
+    mainWindow->Init();
+    mainWindow->CreateDUIWindow();
+    mainWindow->ShowWindow();
+    getchar();
+#if 0
+    DynamicControl dynamicWindow;
+    dynamicWindow.Init();
+    dynamicWindow.CreateDUIWindow();
+    dynamicWindow.ShowWindow();
+#endif
+#if 0
     TimerControl timerWindow;
 	timerWindow.Init();
 	timerWindow.CreateDUIWindow();
 	timerWindow.ShowWindow();
+#endif
 #if 0
     ComplexControl complexWindow;
     complexWindow.Init();
