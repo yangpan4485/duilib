@@ -6,13 +6,13 @@
 #include "timer.h"
 #include "dynamic.h"
 #include "main_wnd.h"
+#include "player.h"
 
 int main(void) {
-    MainWnd* mainWindow = new MainWnd;
-    mainWindow->Init();
-    mainWindow->CreateDUIWindow();
-    mainWindow->ShowWindow();
-    getchar();
+    PlayerWnd* playerWindow = new PlayerWnd;
+    playerWindow->Init();
+    playerWindow->CreateDUIWindow();
+    playerWindow->ShowWindow();
 #if 0
     DynamicControl dynamicWindow;
     dynamicWindow.Init();

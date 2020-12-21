@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="960,720" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id="0" shared="true" name="宋体" size="18" bold="false" underline="false" italic="false" />
+  <Font id="1" shared="true" name="宋体" size="20" bold="false" underline="false" italic="false" />
+  <Font id="2" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
+  <Default shared="true" name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.bmp&apos;&quot; hotimage=&quot;file=&apos;common/button_over.bmp&apos;&quot; pushedimage=&quot;file=&apos;common/button_down.bmp&apos;&quot; font=&quot;0&quot;" />
+
+  <VerticalLayout bkcolor="#FFDFFDF0">  <!-- 整个窗口使用 HorizontalLayout 布局 -->
+  	<VerticalLayout vscroll="true" hscroll="true">
+      <MyWindow name="videoDisplay" />
+      <Button name="btnPlay" text="播放" float="true" pos="330,600,430,630"/>
+      <Button name="btnPause" text="暂停" float="true" pos="460,600,560,630"/>
+  	</VerticalLayout>
+  </VerticalLayout>
+</Window>
