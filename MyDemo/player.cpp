@@ -6,6 +6,7 @@
 #include "d3d9_player.h"
 
 #include "my_window.h"
+#include "resource.h"
 
 PlayerWnd::PlayerWnd()
 {
@@ -151,7 +152,7 @@ void PlayerWnd::OnValueChange(DuiLib::TNotifyUI& msg)
 
 void PlayerWnd::InitWindow()
 {
-
+    SetIcon(IDI_ICON1);
 }
 
 DuiLib::CControlUI* PlayerWnd::CreateControl(LPCTSTR pstrClass)

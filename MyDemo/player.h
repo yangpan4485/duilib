@@ -34,6 +34,7 @@ public:
 
 private:
     HINSTANCE _hInstance;
+    HICON _hIcon{};
     DuiLib::CPaintManagerUI _paintManager{};
     HWND _ownerWnd{};
 

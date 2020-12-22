@@ -8,11 +8,14 @@
 #include "main_wnd.h"
 #include "player.h"
 
+// #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+
 int main(void) {
     PlayerWnd* playerWindow = new PlayerWnd;
     playerWindow->Init();
     playerWindow->CreateDUIWindow();
     playerWindow->ShowWindow();
+	getchar();
 #if 0
     DynamicControl dynamicWindow;
     dynamicWindow.Init();
