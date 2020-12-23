@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="960,540" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4">
+  <VerticalLayout bkcolor="#FFDFFDF0" width="300" height="318">  <!-- 整个窗口使用 HorizontalLayout 布局 -->
+  </VerticalLayout>
+</Window>

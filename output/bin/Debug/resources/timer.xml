@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="800,600" caption="0,0,300,20">
+  <Font id="0" shared="true" name="宋体" size="18" bold="false" underline="false" italic="false" />
+  <Font id="1" shared="true" name="宋体" size="20" bold="false" underline="false" italic="false" />
+  <Font id="2" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
+  <Default shared="true" name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.bmp&apos;&quot; hotimage=&quot;file=&apos;common/button_over.bmp&apos;&quot; pushedimage=&quot;file=&apos;common/button_down.bmp&apos;&quot; font=&quot;0&quot;" />
+	<VerticalLayout bkcolor="#FFDFFDF0" >
+		<Container name="timerContainer" pos="100,100,192,192" float="true" bkimage="file='timer/head_default.png'" bkcolor="#FFFFFFFF"/>
+		<Button name="timerBtn" text="定时器" float="true" pos="106,210,186,240" height="30" />
+
+		<Text text=" {a https://www.csdn.net} 访问 CSDN {/a}"  pos="80,30,400,60" float="true" showhtml="true" font="0"/>
+	</VerticalLayout>
+</Window>

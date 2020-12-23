@@ -15,7 +15,6 @@ int main(void) {
     playerWindow->Init();
     playerWindow->CreateDUIWindow();
     playerWindow->ShowWindow();
-	getchar();
 #if 0
     DynamicControl dynamicWindow;
     dynamicWindow.Init();

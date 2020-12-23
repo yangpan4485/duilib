@@ -10,8 +10,7 @@
 
 PlayerWnd::PlayerWnd()
 {
-    std::string filename = "C:\\byte\\duilib\\resources\\480x272_yuv420p.yuv";
-    _fin.open(filename, std::ios::in | std::ios::binary);
+    
 }
 PlayerWnd::~PlayerWnd()
 {
@@ -21,7 +20,10 @@ PlayerWnd::~PlayerWnd()
     {
         _work.join();
     }
-    _fin.close();
+	if (_fin)
+	{
+		_fin.close();
+	}
 }
 
 void PlayerWnd::Init()
@@ -29,7 +31,9 @@ void PlayerWnd::Init()
     SetProcessDPIAware();
     _hInstance = GetModuleHandle(0);
     DuiLib::CPaintManagerUI::SetInstance(_hInstance);
-    DuiLib::CPaintManagerUI::SetResourcePath(DuiLib::CPaintManagerUI::GetInstancePath() + +_T("..\\..\\..\\resources"));
+    DuiLib::CPaintManagerUI::SetResourcePath(DuiLib::CPaintManagerUI::GetInstancePath() + _T("resources"));
+    _filename = DuiLib::CPaintManagerUI::GetInstancePath() + "resources\\480x272_yuv420p.yuv";
+	_fin.open(_filename, std::ios::in | std::ios::binary);
 }
 bool PlayerWnd::CreateDUIWindow()
 {
@@ -95,6 +99,11 @@ LRESULT PlayerWnd::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam)
 }
 LRESULT PlayerWnd::OnClose(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+	_running = false;
+	if (_work.joinable())
+	{
+		_work.join();
+	}
     return 0;
 }
 
@@ -135,7 +144,6 @@ void PlayerWnd::OnClick(DuiLib::TNotifyUI& msg)
                 }
                 std::this_thread::sleep_for(std::chrono::milliseconds(40));
             }
-            std::cout << "end" << std::endl;
             delete[] data;
         });
         work.detach();
@@ -143,6 +151,30 @@ void PlayerWnd::OnClick(DuiLib::TNotifyUI& msg)
     else if (msg.pSender->GetName() == "btnPause")
     {
         _running = false;
+    }
+    else if (msg.pSender->GetName() == "btnFile") {
+        OPENFILENAME ofn;
+        TCHAR szFile[MAX_PATH] = _T("");
+        std::string strFilter = _T(".sh");
+
+        ZeroMemory(&ofn, sizeof(ofn));
+        // ofn.lpszDefExt = NULL;
+        ofn.lStructSize = sizeof(ofn);
+        ofn.hwndOwner = *this;
+        ofn.lpstrFile = szFile;
+        ofn.nMaxFile = sizeof(szFile);
+        ofn.lpstrFilter = TEXT("YUV File(*YUV)\0*.yuv\0Text Files(*TXT)\0*.txt\0All Files(*.*)\0*.*\0\0");
+        ofn.nFilterIndex = 1;
+        ofn.lpstrFileTitle = NULL;
+        ofn.nMaxFileTitle = 0;
+        ofn.lpstrInitialDir = NULL;
+        ofn.Flags = OFN_EXPLORER | OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
+
+        if (GetOpenFileName(&ofn))
+        {
+            std::cout << "szFile:" << szFile << std::endl;
+            _filename = szFile;
+        }
     }
 }
 void PlayerWnd::OnValueChange(DuiLib::TNotifyUI& msg)

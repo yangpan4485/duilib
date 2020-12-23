@@ -10,6 +10,7 @@
       <MyWindow name="videoDisplay" />
       <Button name="btnPlay" text="播放" float="true" pos="330,600,430,630"/>
       <Button name="btnPause" text="暂停" float="true" pos="460,600,560,630"/>
+      <Button name="btnFile" text="文件" float="true" pos="590,600,690,630"/>
   	</VerticalLayout>
   </VerticalLayout>
 </Window>

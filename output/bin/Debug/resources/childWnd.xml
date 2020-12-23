@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="600,400" mininfo="600,400" caption="0,0,0,32" sizebox="4,4,4,4">
+  <Font id="0" shared="true" name="宋体" size="18" bold="false" underline="false" italic="false" />
+  <Font id="1" shared="true" name="宋体" size="20" bold="false" underline="false" italic="false" />
+  <Font id="2" shared="true" name="宋体" size="16" bold="false" underline="false" italic="false" />
+  <Default shared="true" name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.bmp&apos;&quot; hotimage=&quot;file=&apos;common/button_over.bmp&apos;&quot; pushedimage=&quot;file=&apos;common/button_down.bmp&apos;&quot; font=&quot;0&quot;" />
+  <Default shared="true" name="Option" value="textcolor=&quot;#FFbac0c5&quot; hottextcolor=&quot;#FF386382&quot; selectedtextcolor=&quot;#FF386382&quot; disabledtextcolor=&quot;#FFbac0c5&quot; textpadding=&quot;18,2,0,0&quot; align=&quot;left&quot; selectedimage=&quot;file='common/RadioBtnSel.png' source='0,0,13,13' dest='0,9,14,23'&quot; normalimage=&quot;file='common/RadioBtnNon.png' source='0,0,13,13' dest='0,9,14,23'&quot;" />
+  <Default shared="true" name="CheckBox" value="textcolor=&quot;#FFbac0c5&quot; hottextcolor=&quot;#FF386382&quot; selectedtextcolor=&quot;#FF386382&quot; disabledtextcolor=&quot;#FFbac0c5&quot; textpadding=&quot;20,2,0,0&quot; align=&quot;left&quot; selectedimage=&quot;file='common/checked.png' dest='0,8,16,24'&quot; normalimage=&quot;file='common/unchecked.png' dest='0,8,16,24'&quot;" />
+
+  <VerticalLayout bkcolor="#FFDFFDF0" width="300" height="318">  <!-- 整个窗口使用 HorizontalLayout 布局 -->
+  	<VerticalLayout>
+        <Button name="btnLogin" text="登录" float="true" pos="100,190,200,220"/>
+        <Button name="btnQuit" text="退出" float="true" pos="300,190,400,220"/>
+  	</VerticalLayout>
+  </VerticalLayout>
+</Window>

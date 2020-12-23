@@ -44,4 +44,5 @@ private:
     std::shared_ptr<D3D9Player> _yuv_player{};
 
     CMyWindowUI* _renderWnd{};
+    std::string _filename{};
 };

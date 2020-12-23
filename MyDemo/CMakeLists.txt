@@ -7,3 +7,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../Duilib)
 add_executable(MyDemo ${SRCS})
 
 target_link_libraries(MyDemo duilib)
+
+add_custom_command(TARGET MyDemo
+                   POST_BUILD
+                   COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/../scripts/copy_file.bat
+                   COMMENT "copy file")

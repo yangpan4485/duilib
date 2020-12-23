@@ -16,7 +16,7 @@ void DynamicControl::Init()
     SetProcessDPIAware();
     _hInstance = GetModuleHandle(0);
     DuiLib::CPaintManagerUI::SetInstance(_hInstance);
-    DuiLib::CPaintManagerUI::SetResourcePath(DuiLib::CPaintManagerUI::GetInstancePath() + +_T("..\\..\\..\\resources"));
+    DuiLib::CPaintManagerUI::SetResourcePath(DuiLib::CPaintManagerUI::GetInstancePath() + +_T("resources"));
 }
 bool DynamicControl::CreateDUIWindow()
 {
